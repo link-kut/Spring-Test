@@ -15,3 +15,7 @@ Thunbs.db
 *.class
 *.class
 /target
+
+pom.properties
+pom.properties
+/.settings
