@@ -5,11 +5,9 @@
 
 	<bean id="recorder"
 				class="link.thinkonweb.ipybook.LocalVoteRecorder" />
+				
 	<bean id="votingBooth"
 				class="link.thinkonweb.ipybook.VotingBooth">
 		<property name="voteRecorder" ref="recorder" />
 	</bean>		
 </beans>
-
-
-
