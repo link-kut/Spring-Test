@@ -14,3 +14,4 @@ Thunbs.db
 *.class
 *.class
 *.class
+/target
