@@ -1,13 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 	<bean id="recorder"
-				class="link.thinkonweb.ipybook.LocalVoteRecorder" />
+				class="link.thinkonweb.spring.LocalVoteRecorder" />
 				
 	<bean id="votingBooth"
-				class="link.thinkonweb.ipybook.VotingBooth">
+				class="link.thinkonweb.spring.VotingBooth">
 		<property name="voteRecorder" ref="recorder" />
 	</bean>		
+	
+	<bean id="cm" class="link.thinkonweb.spring.Person">
+		<property name="name">
+			<value> Chan-Myung Kim </value>
+		</property>
+		<property name="player">
+			<ref bean="player"/>
+		</property>
+	</bean>
+	<bean id="player" class="link.thinkonweb.spring.Player"/>
+	<bean id="articleDAO" class="link.thinkonweb.spring.MysqlArticleDAO"/>
+	<bean id="writeArticleServiceImpl" class="link.thinkonweb.spring.WriteArticleServiceImpl">
+		<constructor-arg>
+			<ref bean="articleDAO"/>
+		</constructor-arg>
+	</bean>
+
+	<bean id="profilingAdvice" class="link.thinkonweb.spring.ProfilingAdvice"/>
+	<!-- 
+	<aop:config>
+		<aop:aspect id="traceAspect" ref="profilingAdvice">
+			<aop:pointcut id="publicMethod" expression="execution(public * link.thinkonweb.spring..*(..))"/>
+			<aop:around method="trace" pointcut-ref="publicMethod"/>
+		</aop:aspect>
+	</aop:config>
+ -->
+ 
+ 	<aop:aspectj-autoproxy/>
+	
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://220.68.82.29:3306/ipybookdb"/>
+		<property name="username" value="root"/>
+		<property name="password" value="link#1234"/>
+	</bean>
+
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>	
+	<bean id="jdbcDao" class="link.thinkonweb.spring.DataDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+	</bean>
 </beans>
