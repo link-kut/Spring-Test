@@ -9,13 +9,7 @@
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext"%>
 <%
 	ApplicationContext ctx = new ClassPathXmlApplicationContext("link/thinkonweb/spring/beans.xml");
-	Person cmkim = (Person) ctx.getBean ( "cm");
-%>
-<%= "[name ="+ cmkim.getName () + "]"%>
-<%= cmkim.getMusicTitle()%>
-<%
 
-	//cmkim.listenMusic ();
 %>
 
 <html>

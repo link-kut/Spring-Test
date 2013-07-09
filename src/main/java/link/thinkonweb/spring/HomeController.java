@@ -6,10 +6,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import link.thinkonweb.spring.MemberVO;
+import link.thinkonweb.spring.Service;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,7 +30,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+	private static final ApplicationContext context = new GenericXmlApplicationContext("link/thinkonweb/spring/beans.xml");
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -60,6 +65,12 @@ public class HomeController {
 
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("mav2");
+		
+		Service service = context.getBean("jdbcDao", Service.class);
+		List<MemberVO> list = service.getList();
+		
+		mav.addObject("name", list.get(0).getName());
+		mav.addObject("obj", list.get(0));
 		mav.addObject("mavtest", new String("model and view test"));
 		mav.addObject("query", query);
 		mav.addObject("page", page);

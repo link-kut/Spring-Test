@@ -13,7 +13,9 @@ ${mavtest}<br/>
 ${query}<br/>
 ${page}<br/>
 
-
+<br/>
+${name}<br/>
+${obj.id}<br/>
 
 <c:forEach var="i" items="${testList}">
 jstl test: ${i}<br/>

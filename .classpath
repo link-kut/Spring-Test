@@ -37,5 +37,6 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/org.springframework.jdbc_3.1.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/org.springframework.transaction_3.1.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -6,7 +6,7 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
-
+	<!-- 
 	<bean id="recorder"
 				class="link.thinkonweb.spring.LocalVoteRecorder" />
 				
@@ -30,7 +30,7 @@
 			<ref bean="articleDAO"/>
 		</constructor-arg>
 	</bean>
-
+-->
 	<bean id="profilingAdvice" class="link.thinkonweb.spring.ProfilingAdvice"/>
 	<!-- 
 	<aop:config>
@@ -46,7 +46,10 @@
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://220.68.82.29:3306/ipybookdb"/>
+		<!-- 
+		<property name="url" value="jdbc:mysql://localhost:3306/ipybookdb"/>
+		 -->
+		 <property name="url" value="jdbc:mysql://220.68.82.29:3306/ipybookdb"/>
 		<property name="username" value="root"/>
 		<property name="password" value="link#1234"/>
 	</bean>
