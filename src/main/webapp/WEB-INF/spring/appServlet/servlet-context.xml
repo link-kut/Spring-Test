@@ -17,29 +17,31 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
-
-    <context:annotation-config/>
-    
-		<context:component-scan base-package="spring"/>
-		
-	    <!-- Enables POJO @Controllers (like CartController) -->
-		<beans:bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
-		
-		<!-- Maps flow requests from DispatcherServlet to flowController -->
-		<beans:bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-			<beans:property name="mappings">
-				<beans:value>
-					/register=flowController
-				</beans:value>
-			</beans:property>
-			<beans:property name="alwaysUseFullPath" value="true"/>
-		</beans:bean>
-		<!-- Enables annotated methods on POJO @Controllers (like CartController) -->
-		<beans:bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
-		
-		<!-- Enables plain Controllers (e.g. FlowController) -->
-		<beans:bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
-
+	<!-- ================================================================== -->
+	<!-- Spring MVC stuff                                                   -->
+	<!-- ================================================================== -->
+  <context:annotation-config/>
+   
+	<context:component-scan base-package="spring"/>
+	
+  <!-- Enables POJO @Controllers (like CartController) -->
+	<beans:bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+	
+	<!-- Maps flow requests from DispatcherServlet to flowController -->
+	<beans:bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<beans:property name="mappings">
+			<beans:value>
+				/register=flowController
+			</beans:value>
+		</beans:property>
+		<beans:property name="alwaysUseFullPath" value="true"/>
+	</beans:bean>
+	<!-- Enables annotated methods on POJO @Controllers (like CartController) -->
+	<beans:bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+	
+	<!-- Enables plain Controllers (e.g. FlowController) -->
+	<beans:bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+ 
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
