@@ -22,5 +22,7 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+
+<div><a href="register">Register</a></div>
 </body>
 </html>

@@ -57,6 +57,16 @@ public class HomeController {
 		return "home";
 	}
 	
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String home() {
+
+		
+		return "home";
+	}
+	
+
+	
 	@RequestMapping(value = "/mav", method = RequestMethod.GET)
 	public ModelAndView modelAndView(@RequestParam(value="q", required=false, defaultValue="querytest") String query,
 			@RequestParam(value="p", required=false, defaultValue="1") int page
