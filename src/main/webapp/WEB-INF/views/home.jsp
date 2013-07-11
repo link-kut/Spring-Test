@@ -28,7 +28,7 @@
 					<h2>Your Cart</h2>
 					Your cart currently contains ${shoppingCart.itemCount} items.
 					<a href="${contextPath}/spring/checkout">Checkout &raquo;</a>
-				
+				  <img class="product-thumb" src="img/git-transport.png" alt="aaa" />
 					<h2>Our Products</h2>
 					<table>
 						<c:forEach var="product" items="${products}">
