@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
     <!-- By default, the first state is the start state. -->
-    <view-state id="register" view="registerForm">
+    <view-state id="register" view="/account/registerForm">
         <transition on="submitRegistration" to="accountAdded"/>
         <transition on="cancelRegistration" to="cancelRegistration"/>
     </view-state>

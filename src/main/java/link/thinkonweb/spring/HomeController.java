@@ -1,6 +1,7 @@
 package link.thinkonweb.spring;
 
 import java.text.DateFormat;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.Locale;
 
 import link.thinkonweb.spring.MemberVO;
 import link.thinkonweb.spring.Service;
-
+import link.thinkonweb.spring.CartService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.ui.ModelMap;
 /**
  * Handles requests for the application home page.
  */
@@ -31,6 +32,11 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	private static final ApplicationContext context = new GenericXmlApplicationContext("link/thinkonweb/spring/beans.xml");
+	private CartService cartService;
+	
+	public void setCartService(CartService cartService) {
+		this.cartService = cartService;
+	}
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -59,10 +65,11 @@ public class HomeController {
 	
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String home() {
-
-		
-		return "home";
+	public ModelMap doHome() {
+		ModelMap model = new ModelMap();
+		model.addAttribute("shoppingCart", cartService.getShoppingCart());
+		model.addAttribute("products", cartService.getProducts());
+		return model;
 	}
 	
 

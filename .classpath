@@ -41,5 +41,6 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/spring-webflow-2.4.0.M1.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/spring-binding-2.4.0.M1.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/spring-js-2.4.0.M1.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/cglib-nodep-2.2.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
