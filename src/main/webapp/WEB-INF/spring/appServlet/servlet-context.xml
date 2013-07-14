@@ -41,7 +41,6 @@
 		<beans:property name="mappings">
 			<beans:value>
 				/account/register=flowController
-				
 				/addToCart=flowController
 				/checkout=flowController
 				/account/login=flowController
@@ -49,6 +48,8 @@
 		</beans:property>
 		<beans:property name="alwaysUseFullPath" value="true"/>
 	</beans:bean>
+	
+	
 	<!-- Enables annotated methods on POJO @Controllers (like CartController) -->
 	<beans:bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
 	
