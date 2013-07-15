@@ -5,6 +5,7 @@
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:flow="http://www.springframework.org/schema/webflow-config"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans 
@@ -15,7 +16,6 @@
 		http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd
 		http://www.springframework.org/schema/aop
 		http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
-		http://www.springframework.org/schema/util
 		http://www.springframework.org/schema/util/spring-util-2.0.xsd"
 		default-autowire="byName">
 
@@ -116,11 +116,11 @@
 	</beans:bean>
 	
 	<!-- Autowired into CartServiceImpl -->
-	<!--
+	<!-- 
 	<util:list id="shippingOptions">
-		<value>Standard Shipping (1 week) - Free</value>
+		<value>Standard Shipping(1 week)-Free</value>
 		<value>Expedited Shipping (3 days) - $19.95</value>
 		<value>Overnight Shipping - $59.95</value>
 	</util:list>
-	-->
+	 -->
 </beans:beans>

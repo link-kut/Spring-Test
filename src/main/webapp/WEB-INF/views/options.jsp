@@ -17,6 +17,7 @@
 				<div class="yui-g">
 					<div class="yui-u first">
 						<h2 style="margin-top:0">Shipping Information</h2>
+						<!-- 
 						<div style="margin:20px 0">
 							Choose:
 							<select>
@@ -25,6 +26,7 @@
 								</c:forEach>
 							</select>
 						</div>
+						 -->
 						<div>
 							<p>Where would you like us to ship your order?</p>
 							<table>

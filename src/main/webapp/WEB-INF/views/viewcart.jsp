@@ -26,7 +26,7 @@
 					<table>
 						<c:forEach var="product" items="${recommendations}">
 							<tr>
-								<td><img class="product-thumb" src="resources/img/${product.imageUrl}" alt="${product.description}" /></td>
+								<td><img class="product-thumb" src="img/${product.imageUrl}" alt="${product.description}" /></td>
 								<td>${product.description}</td>
 								<td class="numeric">${product.priceInDollars}</td>
 								<td><a href="${flowExecutionUrl}&_eventId=addToCart&productId=${product.id}">[add to cart]</a></td>
